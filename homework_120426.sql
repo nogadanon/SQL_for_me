@@ -1,38 +1,38 @@
 -- 1. Create a new table called STUDENTS with columns and constraints:
 -- ID INT PRIMARY KEY, NAME TEXT NOT NULL, AGE, CITY, GRADE REAL NOT NULL.
   
-CREATE TABLE COMPANY(
-ID INT PRIMARY KEY NOT NULL,
-NAME TEXT NOT NULL,
-AGE INT NOT NULL,
-ADDRESS CHAR(50),
-SALARY REAL 
+CREATE TABLE STUDENTS(
+ID INT PRIMARY KEY,
+NAME TEXT NOT NULL, 
+AGE,
+CITY,
+GRADE REAL NOT NULL
 );
 
 -- 2. Create exactly 4 students that appear in the table below
 INSERT INTO STUDENTS (ID, NAME, AGE, CITY, GRADE)
 VALUES (1, 'Noa', 15, 'Tel Aviv', 92.5),
-(2, 'Lima', 16, 'Haifa', 88.0),
+(2, 'Liam', 16, 'Haifa', 88.0),
 (3, 'Maya', 15, 'Netanya', 95.0),
 (4, 'Omer', 17, 'Jerusalem', 81.5);
 
 -- 3.1 select query to display all students and all columns
 SELECT *
-FROM STUDENTS
+FROM STUDENTS;
 
 -- 3.2 select query to show all students only name and grade
 SELECT NAME, GRADE
-FROM STUDENTS
+FROM STUDENTS;
 
 -- 3.3 select query to show all students who got grade above 90
 SELECT *
 FROM STUDENTS
-WHERE GRADE > 90
+WHERE GRADE > 90;
 
 -- 3.4 select all students where their name starts with M
 SELECT *
 FROM STUDENTS
-WHERE NAME LIKE 'M%'
+WHERE NAME LIKE 'M%';
 
 -- 3.5 show the avg grade, max, min
 SELECT 
@@ -49,18 +49,18 @@ WHERE GRADE > (SELECT AVG(GRADE) FROM STUDENTS);
 -- 4. Change Liam grade to 90
 UPDATE STUDENTS
 SET GRADE = 90
-WHERE NAME LIKE 'Lima'
+WHERE NAME LIKE 'Lima';
 
 -- 5. Delete all students where city starts with "N"
 DELETE FROM STUDENTS
-WHERE CITY LIKE 'N%'
+WHERE CITY LIKE 'N%';
 
 -- 6. Delete all students with grade 88
 DELETE FROM STUDENTS
-WHERE GRADE = 88
+WHERE GRADE = 88;
 
 -- 7. Finally drop the table
-DROP TABLE STUDENTS
+DROP TABLE STUDENTS;
 
 
 
